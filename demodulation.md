@@ -1,4 +1,5 @@
-`#include <stdlib.h>
+`a
+#include <stdlib.h>
 #include "DSP28_Device.h"
 #include <string.h>
 
@@ -7,20 +8,20 @@ static int32 Threshold_Value_Decision = 0;<br/>
 #define synCodeNum  7<br/>
 int32 tempConvX[ DEMODU_BUFFER_NUM ];<br/>
 int32 tempConvY[ DEMODU_BUFFER_NUM + 10 ];  //最大10阶，记得修改开机清除buf大小<br/>
-int32 filterResult[DEMODU_PRO_NUM + Interval+1];
+int32 filterResult[DEMODU_PRO_NUM + Interval+1];<br/>
 #define MAX_DECISION_SIZE ( (1 + 2 + RS_ENCODE_COUNT*nn + 2 + 2) * 8 ) //1个同部位 2个帧头 2*nn个编码 2个帧尾  2个保留<br/>
 Uint8 tempCode[   DEMODU_BUFFER_NUM/Interval  + synCodeNum]; //DEMODU_BUFFER_NUM/( (MPPSK_N * ADC_RATE)/PWM_RATE )<br/>
 
-``/*
+/*
 *@function		DemodulateSlove
 *@brief				demodulate data
 *@parameter		1.memoryFlag	a flag determines which buffer can be processd
 *@retval			none
 */
 
-``#if IS_FLASH
+#if IS_FLASH
 #pragma CODE_SECTION( DemodulateSlove, "ramfuncs" )
-#endif``
+#endif
 void DemodulateSlove()
 {
     int32 *filterResultPtr= &filterResult[Interval] ; //An array to hold the responses of filters
