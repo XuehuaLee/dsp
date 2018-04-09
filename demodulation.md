@@ -866,4 +866,5 @@ static int8 Decision(int32* srcVector,Uint8 num, Uint8* codeVector)
 
     }
     return codeNum;
-}`
+}
+`
