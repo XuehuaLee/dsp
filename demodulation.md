@@ -2,14 +2,14 @@
 #include "DSP28_Device.h"
 #include <string.h>
 
-static int32 Threshold_Value = 0;
-static int32 Threshold_Value_Decision = 0;
-#define synCodeNum  7
-int32 tempConvX[ DEMODU_BUFFER_NUM ];
-int32 tempConvY[ DEMODU_BUFFER_NUM + 10 ];  //最大10阶，记得修改开机清除buf大小
+static int32 Threshold_Value = 0;<br/>
+static int32 Threshold_Value_Decision = 0;<br/>
+#define synCodeNum  7<br/>
+int32 tempConvX[ DEMODU_BUFFER_NUM ];<br/>
+int32 tempConvY[ DEMODU_BUFFER_NUM + 10 ];  //最大10阶，记得修改开机清除buf大小<br/>
 int32 filterResult[DEMODU_PRO_NUM + Interval+1];
-#define MAX_DECISION_SIZE ( (1 + 2 + RS_ENCODE_COUNT*nn + 2 + 2) * 8 ) //1个同部位 2个帧头 2*nn个编码 2个帧尾  2个保留
-Uint8 tempCode[   DEMODU_BUFFER_NUM/Interval  + synCodeNum]; //DEMODU_BUFFER_NUM/( (MPPSK_N * ADC_RATE)/PWM_RATE )
+#define MAX_DECISION_SIZE ( (1 + 2 + RS_ENCODE_COUNT*nn + 2 + 2) * 8 ) //1个同部位 2个帧头 2*nn个编码 2个帧尾  2个保留<br/>
+Uint8 tempCode[   DEMODU_BUFFER_NUM/Interval  + synCodeNum]; //DEMODU_BUFFER_NUM/( (MPPSK_N * ADC_RATE)/PWM_RATE )<br/>
 
 /*
 *@function		DemodulateSlove
