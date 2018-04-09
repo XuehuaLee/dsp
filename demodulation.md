@@ -11,7 +11,7 @@ int32 filterResult[DEMODU_PRO_NUM + Interval+1];
 #define MAX_DECISION_SIZE ( (1 + 2 + RS_ENCODE_COUNT*nn + 2 + 2) * 8 ) //1个同部位 2个帧头 2*nn个编码 2个帧尾  2个保留<br/>
 Uint8 tempCode[   DEMODU_BUFFER_NUM/Interval  + synCodeNum]; //DEMODU_BUFFER_NUM/( (MPPSK_N * ADC_RATE)/PWM_RATE )<br/>
 
-/*
+``/*
 *@function		DemodulateSlove
 *@brief				demodulate data
 *@parameter		1.memoryFlag	a flag determines which buffer can be processd
