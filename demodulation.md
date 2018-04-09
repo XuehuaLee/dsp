@@ -18,9 +18,9 @@ Uint8 tempCode[   DEMODU_BUFFER_NUM/Interval  + synCodeNum]; //DEMODU_BUFFER_NUM
 *@retval			none
 */
 
-#if IS_FLASH
+``#if IS_FLASH
 #pragma CODE_SECTION( DemodulateSlove, "ramfuncs" )
-#endif
+#endif``
 void DemodulateSlove()
 {
     int32 *filterResultPtr= &filterResult[Interval] ; //An array to hold the responses of filters
