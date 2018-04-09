@@ -216,10 +216,10 @@ void ModuLateOutput(  Uint8* codeArray,  Uint8* codeNumPtr)
             Send_Cmd_Flag = 0;
             Send_Flag = 1;
             SendCount++;
-#if IS_FULL
-#if IS_SEND_LOOP
-            Send_Cmd_Flag = 1;
-#else
+	#if IS_FULL
+	#if IS_SEND_LOOP
+		    Send_Cmd_Flag = 1;
+	#else
 	//             EALLOW;
 	//             GpioMuxRegs.GPAMUX.bit.PWM1_GPIOA0=0;   //设置PWM1引脚,1为功能引脚
 	//             GpioMuxRegs.GPADIR.bit.GPIOA0 = 1;
@@ -230,8 +230,8 @@ void ModuLateOutput(  Uint8* codeArray,  Uint8* codeNumPtr)
              EvaRegs.T1CON.bit.TENABLE=0;//码组发送结束
              DSP28x_usDelay(250000);
              EvaRegs.T2CON.bit.TENABLE=1;
-#endif
-#endif
+	#endif
+	#endif
             return;
         }
         //开始发送
